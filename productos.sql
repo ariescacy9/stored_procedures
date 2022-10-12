@@ -1,3 +1,16 @@
+create table product (
+  id serial primary key not null,
+  name varchar not null,
+  material_id serial,
+  category_id serial,
+  brand_id serial
+);
+
+create table inventory (
+  id serial primary key not null,
+  product_id serial not null,
+  amount_total float
+);
 
 --- procedimiento venta en inventario
 create or replace procedure buy_or_sell(
